@@ -14,16 +14,12 @@ def plot():
     wavy =  int(e2.get())
     
     x, y = np.meshgrid(np.arange(width),np.arange(height))
-    
-    # noise_w = n1.get()  #0.5
-    # noise_i = n2.get() #0.15
-    
+      
     noise_w = 0.5 #bigger noise (waviness)
     noise_i = 0.15 #smaller noise
     
     period = int(e1.get())
     
-    # xyz = (noise_w*np.random.random(1))*np.sin(2*np.pi*(y + period *wavy* np.sin(2*np.pi* x /(period*25)))/period) + noise_i*np.random.random((height,width))
     xyz = (noise_w*np.random.random(1))*np.sin(2*np.pi*(y + period *wavy* np.sin(2*np.pi* x /(period*25)))/period) + noise_i*np.random.random((height,width))
     
     ax[0].imshow(xyz)
